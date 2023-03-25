@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+import "./Algorithm.sol";
+
+/**
+ * @dev Implements a dummy DNSSEC (signing) algorithm that approves all
+ *      signatures, for testing.
+ */
+contract DummyAlgorithm is Algorithm {
+    function verify(
+        bytes calldata,
+        bytes calldata,
+        bytes calldata
+    ) external pure override returns (bool) {
+        return true;
+    }
+}
